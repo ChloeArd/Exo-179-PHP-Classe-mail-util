@@ -39,7 +39,7 @@
 <?php
 
 if (isset($_POST["monMail"], $_POST["destinataires"], $_POST["sujets"], $_POST["message"])) {
-    $envoieMail = new Mail($_POST['sujets'], $_POST["destinataires"], $_POST["monMail"], "f-".$_POST["message"]);
+    $envoieMail = new Mail($_POST['sujets'], $_POST["destinataires"], $_POST["monMail"], "-f ".$_POST["message"]);
     $envoieMail->sendMail();
 }
 

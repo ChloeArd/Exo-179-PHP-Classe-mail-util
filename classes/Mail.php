@@ -9,7 +9,7 @@ class Mail {
     public function __construct ($sujets, $destinataire, $envoyeur, $message) {
         $this->setSujets($sujets);
         $this->setDestinataire($destinataire);
-        $this->setEntete($entete);
+        $this->setEnvoyeur($envoyeur);
         $this->setMessage($message);
     }
 
@@ -83,3 +83,4 @@ class Mail {
         }
     }
 }
+
