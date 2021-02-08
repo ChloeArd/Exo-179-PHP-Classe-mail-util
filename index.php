@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <form method="post" action="./classes/Mail.php">
+    <form method="post" action="index.php">
         <div>
             <label for="monMail"> Votre mail : </label>
             <input type="email" id="monMail" required>
@@ -39,14 +39,8 @@
 <?php
 
 if (isset($_POST["monMail"], $_POST["destinataires"], $_POST["sujets"], $_POST["message"])) {
-    $envoieMail = new Mail($_POST['sujets'], $_POST["destinataires"], $_POST["monMail"], $_POST["message"]);
+    $envoieMail = new Mail($_POST['sujets'], $_POST["destinataires"], $_POST["monMail"], "f-".$_POST["message"]);
     $envoieMail->sendMail();
-
-
-    echo "De : ".$_POST["monmail"]."<br>";
-    echo "A : ".$_POST["destinataires"]."<br>";
-    echo "Sujets : ".$_POST["sujets"]."<br>";
-    echo "Message : ".$_POST["message"];
 }
 
 ?>
