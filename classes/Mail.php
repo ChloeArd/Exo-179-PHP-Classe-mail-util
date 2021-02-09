@@ -79,7 +79,7 @@ class Mail {
 
     function sendMail() {
         if (isset($_POST["email"], $_POST["message"])){
-            mail($this->getDestinataire(), $this->getSujets(), $this->getMessage(), $this->getEnvoyeur());
+            mail($this->getDestinataire(), $this->getSujets(), $this->getMessage(), "-f ".$this->getEnvoyeur());
         }
     }
 }
